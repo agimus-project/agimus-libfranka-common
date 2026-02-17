@@ -1,0 +1,15 @@
+<package format="3">
+  <name>agimus_libfranka_common</name>
+  <version>0.1.0</version>
+  <description>fork of libfranka-common for franka robots not maintained anymore by franka</description>
+  <maintainer email="guilhem.saurel@laas.fr">Guilhem Saurel</maintainer>
+  <license>Apache-2.0</license>
+
+  <author>Franka Robotics GmbH</author>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>

@@ -1,4 +1,6 @@
-# libfranka-common
+# agimus-libfranka-common
+
+This is a fork of https://github.com/frankarobotics/libfranka-common for franka robots not maintained anymore by franka.
 
 Types and definitions common to [`libfranka`][api-docs] and the [Franka Control Interface (FCI)][fci-docs] of Franka Emika research robots.
 
