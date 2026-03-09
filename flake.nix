@@ -20,8 +20,6 @@
           inputs.gazebros2nix.flakeModule
           {
             gazebros2nix = {
-              rosDistros = [ "humble" ];
-              rosShellDistro = "humble";
               rosOverrides.agimus-libfranka-common = _final: _ros-final: {
                 src = lib.fileset.toSource {
                   root = ./.;
