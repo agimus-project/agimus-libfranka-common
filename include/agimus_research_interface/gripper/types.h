@@ -38,9 +38,11 @@ struct ResponseBase {
 
   const typename T::Status status;
 
-  static_assert(std::is_enum<decltype(status)>::value, "Status must be an enum.");
+  static_assert(std::is_enum<decltype(status)>::value,
+                "Status must be an enum.");
   static_assert(
-      std::is_same<typename std::underlying_type<decltype(status)>::type, uint16_t>::value,
+      std::is_same<typename std::underlying_type<decltype(status)>::type,
+                   uint16_t>::value,
       "Status must be of type uint16_t.");
   static_assert(static_cast<uint16_t>(decltype(status)::kSuccess) == 0,
                 "Status must define kSuccess with value of 0.");
@@ -49,11 +51,14 @@ struct ResponseBase {
 template <typename T>
 struct CommandMessage {
   CommandMessage() = default;
-  CommandMessage(const CommandHeader& header, const T& instance) : header(header) {
+  CommandMessage(const CommandHeader& header, const T& instance)
+      : header(header) {
     std::memcpy(payload.data(), &instance, payload.size());
   }
 
-  T getInstance() const noexcept { return *reinterpret_cast<const T*>(payload.data()); }
+  T getInstance() const noexcept {
+    return *reinterpret_cast<const T*>(payload.data());
+  }
 
   CommandHeader header;
   std::array<uint8_t, sizeof(T)> payload;
@@ -62,7 +67,8 @@ struct CommandMessage {
 template <typename T>
 struct CommandMessage<RequestBase<T>> {
   CommandMessage() = default;
-  CommandMessage(const CommandHeader& header, const RequestBase<T>&) : header(header) {}
+  CommandMessage(const CommandHeader& header, const RequestBase<T>&)
+      : header(header) {}
 
   RequestBase<T> getInstance() const noexcept { return RequestBase<T>(); }
 
@@ -105,7 +111,8 @@ struct Homing : public CommandBase<Homing, Command::kHoming> {};
 
 struct Grasp : public CommandBase<Grasp, Command::kGrasp> {
   struct GraspEpsilon {
-    constexpr GraspEpsilon(double inner, double outer) : inner(inner), outer(outer) {}
+    constexpr GraspEpsilon(double inner, double outer)
+        : inner(inner), outer(outer) {}
     const double inner;
     const double outer;
   };
