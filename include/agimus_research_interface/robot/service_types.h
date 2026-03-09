@@ -7,7 +7,7 @@
 #include <cstring>
 #include <type_traits>
 
-namespace research_interface {
+namespace agimus_research_interface {
 namespace robot {
 
 #pragma pack(push, 1)
@@ -350,4 +350,4 @@ struct LoadModelLibrary : public CommandBase<LoadModelLibrary, Command::kLoadMod
 #pragma pack(pop)
 
 }  // namespace robot
-}  // namespace research_interface
+}  // namespace agimus_research_interface

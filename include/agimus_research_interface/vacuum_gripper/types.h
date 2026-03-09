@@ -8,7 +8,7 @@
 #include <cstring>
 #include <type_traits>
 
-namespace research_interface {
+namespace agimus_research_interface {
 namespace vacuum_gripper {
 
 #pragma pack(push, 1)
@@ -142,4 +142,4 @@ struct VacuumGripperState {
 #pragma pack(pop)
 
 }  // namespace vacuum_gripper
-}  // namespace research_interface
+}  // namespace agimus_research_interface

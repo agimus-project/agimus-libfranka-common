@@ -2,7 +2,7 @@
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
 #pragma once
 
-namespace research_interface {
+namespace agimus_research_interface {
 namespace robot {
 
 enum class Error : size_t {
@@ -138,4 +138,4 @@ const char* getErrorName(Error error) {
 }
 
 }  // namespace robot
-}  // namespace research_interface
+}  // namespace agimus_research_interface

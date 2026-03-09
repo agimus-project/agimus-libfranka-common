@@ -2,9 +2,9 @@
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
 #pragma once
 
-#include <research_interface/robot/service_types.h>
+#include <agimus_research_interface/robot/service_types.h>
 
-namespace research_interface {
+namespace agimus_research_interface {
 namespace robot {
 
 template <typename T>
@@ -71,4 +71,4 @@ struct CommandTraits<AutomaticErrorRecovery> {
 };
 
 }  // namespace robot
-}  // namespace research_interface
+}  // namespace agimus_research_interface

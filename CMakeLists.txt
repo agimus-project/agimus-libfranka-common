@@ -12,7 +12,7 @@ target_include_directories(${PROJECT_NAME} INTERFACE
 )
 
 install(
-  DIRECTORY include/research_interface
+  DIRECTORY include/agimus_research_interface
   DESTINATION include
 )
 
