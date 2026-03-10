@@ -19,16 +19,14 @@
         imports = [
           inputs.gazebros2nix.flakeModule
           {
-            gazebros2nix = {
-              rosOverrides.agimus-libfranka-common = _final: _ros-final: {
-                src = lib.fileset.toSource {
-                  root = ./.;
-                  fileset = lib.fileset.unions [
-                    ./CMakeLists.txt
-                    ./Config.cmake.in
-                    ./include
-                  ];
-                };
+            gazebros2nix.rosOverrides.agimus-libfranka-common = _final: _ros-final: {
+              src = lib.fileset.toSource {
+                root = ./.;
+                fileset = lib.fileset.unions [
+                  ./CMakeLists.txt
+                  ./Config.cmake.in
+                  ./include
+                ];
               };
             };
           }
